@@ -1,8 +1,63 @@
 <template>
-  <div id="chatContainer">
-    <div class="chatHeader">
-      <h4>Bot</h4>
+  <div class="aufgabenansicht-4">
+    <div class="header">
+      <div class="header-inner" id="groupContainer">
+        <div class="vector-parent">
+          <img class="frame-child" alt="" src="/ellipse-3.svg" />
+          <img class="image-19-icon" alt="" src="/image-19@2x.png" />
+        </div>
+      </div>
+      <div class="star-button-parent">
+        <div class="star-button" id="starButtonContainer">
+          <div class="vector-parent">
+            <div class="frame-item"></div>
+            <img
+              class="image-16-icon"
+              alt=""
+              src="/image-16@2x.png"
+              />
+          </div>
+        </div>
+        <div class="profil-button">
+          <div class="profil-button-child"></div>
+          <div class="ellipse-group" id="groupContainer1">
+            <div class="group-child"></div>
+            <img
+              class="image-98-icon"
+              alt=""
+              src="/image-98@2x.png"
+              />
+          </div>
+        </div>
+      </div>
+      <div class="zurck-button" id="zurckButtonContainer">
+        <img class="zurck-button-child" alt="" src="/ellipse-3.svg" />
+        <img class="image-83-icon" alt="" src="/image-83@2x.png" />
+      </div>
     </div>
+    <div class="aufgabe">
+      <div class="aufgabe-inner">
+        <div class="group-item"></div>
+      </div>
+      <div class="aufgabenstellung">
+        <b class="level-4-1-zutaten">Level 4-1: Zutaten des Zaubertranks</b>
+        <div class="das-rezept-erfordert">
+          Das Rezept erfordert zunächst 548 Tassen Limonade und 235 Tassen
+          Tee. Wie viele Tassen Flüssigkeit muss das Einhorn insgesamt in den
+          Zaubertrank hinzufügen?
+        </div>
+      </div>
+      <div class="aufgabe-child">
+        <div class="rechnen-mit-greren-zahlen-parent">
+          <b class="rechnen-mit-greren">Rechnen mit größeren Zahlen</b>
+          <img class="image-84-icon" alt="" src="/image-84@2x.png" />
+        </div>
+      </div>
+      <img class="cup-1-icon" alt="" src="/cup-1@2x.png" />
+      <img class="mortar-1-icon" alt="" src="/mortar-1@2x.png" />
+      <img class="cup-1-1" alt="" src="/cup-1-1@2x.png" />
+    </div>
+    <div id="chatContainer">
     <div class="chatBody">
       <div class="messages" v-for="message in messages" :key="message.id">
         <div class="messageRow user" v-if="message.id % 2 == 0">
@@ -23,6 +78,9 @@
         <input type="submit" />
       </form>
     </div>
+  </div>
+
+    <img class="aufgabenansicht-4-child" alt="" src="/group-70.svg" />
   </div>
 </template>
 
@@ -89,14 +147,22 @@ export default {
 
 
 <style>
+
+.rechnen-mit-greren-zahlen-parent{
+  color:white;
+}
+
 #chatContainer {
-  background-color: #282c34;
-  height: 600px;
-  width: 40%;
+  
+  height: 285px;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: fixed; /* Positioned relative to the #parentContainer */
+  bottom: 0; /* This keeps #chatContainer at the bottom of #parentContainer */
+  left: 0;
+  right: 0;
 }
 .chatHeader {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -117,16 +183,17 @@ export default {
 }
 .chatBody {
   overflow-y: scroll;
-  height: 83%;
+  height: 85%;
 }
 #createMessage {
-  width: 80%;
+  width: 90%;
+  margin-bottom: 12px;
 }
 input:not(#createMessage) {
   background-color: #AF05FF;
   border: 0;
   color: white;
-  padding: 10px;
+  padding: 8px;
   margin-bottom: 12px;
   opacity: 0.8;
 }
@@ -150,7 +217,7 @@ input:not(#createMessage):hover {
   margin: 10px;
 }
 .messageRow.user .message {
-  background-color: #1982fc;
+  background-color: blue;
 }
 .messageRow.bot .message {
   background-color: #43cc47;
@@ -158,5 +225,265 @@ input:not(#createMessage):hover {
 .chatBody::-webkit-scrollbar {
   width: 0px;
   height: 100%;
+}
+.frame-child {
+  position: relative;
+  width: 128px;
+  height: 124px;
+  z-index: 0;
+}
+.image-19-icon {
+  position: absolute;
+  margin: 0 !important;
+  top: 22px;
+  left: 18px;
+  width: 91px;
+  height: 80px;
+  object-fit: cover;
+  z-index: 1;
+}
+.vector-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.frame-item,
+.header-inner {
+  position: relative;
+  width: 128px;
+  height: 124px;
+  z-index: 0;
+}
+.header-inner {
+  cursor: pointer;
+}
+.frame-item {
+  border-radius: 50%;
+  background-color: #25bbeb;
+}
+.image-16-icon {
+  position: absolute;
+  margin: 0 !important;
+  top: 25px;
+  left: 27px;
+  width: 74px;
+  height: 74px;
+  object-fit: cover;
+  z-index: 1;
+}
+.star-button {
+  position: relative;
+  width: 128px;
+  height: 124px;
+  cursor: pointer;
+}
+.group-child,
+.profil-button-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.group-child {
+  border-radius: 50%;
+  background-color: var(--color-white);
+  width: 128px;
+  height: 124px;
+}
+.image-98-icon {
+  position: absolute;
+  top: 21px;
+  left: 30px;
+  width: 67px;
+  height: 81px;
+  object-fit: cover;
+}
+.ellipse-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: 124px;
+  cursor: pointer;
+}
+.profil-button {
+  position: relative;
+  width: 128px;
+  height: 124px;
+}
+.star-button-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 25px;
+  z-index: 1;
+}
+.image-83-icon,
+.zurck-button-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: 124px;
+}
+.image-83-icon {
+  top: 22px;
+  left: 23px;
+  width: 81px;
+  height: 80px;
+  object-fit: cover;
+}
+.zurck-button {
+  position: absolute;
+  margin: 0 !important;
+  top: 19px;
+  left: 175px;
+  width: 128px;
+  height: 124px;
+  cursor: pointer;
+  z-index: 2;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 25px;
+  box-sizing: border-box;
+}
+.aufgabe-inner,
+.group-item {
+  position: absolute;
+  left: 0;
+  width: 1188.4px;
+  height: 328px;
+}
+.group-item {
+  top: 0;
+  border-radius: 48.83px;
+  border: 7.3px solid #af05ff;
+  box-sizing: border-box;
+}
+.aufgabe-inner {
+  top: 55px;
+}
+.level-4-1-zutaten {
+  position: relative;
+  line-height: 120%;
+  white-space: pre-wrap;
+}
+.das-rezept-erfordert {
+  position: relative;
+  line-height: 120%;
+  display: inline-block;
+  width: 556px;
+  height: 91px;
+  flex-shrink: 0;
+}
+.aufgabenstellung {
+  color:white;
+  position: absolute;
+  top: 110px;
+  left: 88px;
+  border-radius: 9.5px;
+  width: 605px;
+  height: 225px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 31.66867446899414px;
+  box-sizing: border-box;
+  gap: 15.83px;
+}
+.rechnen-mit-greren {
+  position: absolute;
+  top: 8px;
+  left: calc(50% - 227px);
+  line-height: 89.46%;
+  display: inline-block;
+  width: 505px;
+  height: 45px;
+}
+.image-84-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 39px;
+  height: 37px;
+  object-fit: cover;
+}
+.aufgabe-child,
+.rechnen-mit-greren-zahlen-parent {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 278px);
+  width: 556px;
+  height: 53px;
+}
+.aufgabe-child {
+  left: calc(50% - 242.2px);
+  font-size: 36px;
+  font-family: var(--font-outfit);
+}
+.cup-1-icon {
+  position: absolute;
+  top: 157px;
+  left: 779px;
+  width: 75px;
+  height: 63px;
+  object-fit: cover;
+}
+.cup-1-1,
+.mortar-1-icon {
+  position: absolute;
+  top: 142px;
+  left: 868px;
+  width: 194px;
+  height: 194px;
+  object-fit: contain;
+}
+.cup-1-1 {
+  top: 99px;
+  left: 830px;
+  width: 63px;
+  height: 63px;
+  object-fit: cover;
+}
+.aufgabe {
+  position: absolute;
+  top: 163px;
+  left: 51px;
+  width: 1188.4px;
+  height: 383px;
+}
+.aufgabenansicht-4-child {
+  position: absolute;
+  top: 494px;
+  left: 1328px;
+  width: 112.2px;
+  height: 493px;
+}
+.aufgabenansicht-4 {
+  position: relative;
+  background-color: #020142;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl-6);
+  color: var(--color-white);
+  font-family: var(--font-inter);
 }
 </style>
