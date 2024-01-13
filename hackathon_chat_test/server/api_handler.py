@@ -26,6 +26,7 @@ def call_openai(user_question:str,chat_history:dict) ->str:
 
     The prompt template includes placeholders for animal type, username, assignment, solution, chat history, and the current question.
     ->hint: only question and chat_history are used as parameters of the function atm
+    ->hint: prompt template could also be passed to the function
     The OpenAI language model is used to generate responses within the defined conversation framework.
 
     Note: Ensure that necessary environment variables (TEMPERATURE, MODEL, MAX_TOKENS,OPENAI_API_KEY) are properly set, and the required libraries are imported for the function to execute correctly.
