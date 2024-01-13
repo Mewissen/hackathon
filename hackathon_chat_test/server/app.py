@@ -4,6 +4,7 @@ from flask_cors import CORS
 import api_handler
 
 app = Flask(__name__)
+#weil sicherheit ist wie CORS, wird bei uns groß geschrieben
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 # A simple in-memory storage for chat history
@@ -14,8 +15,20 @@ def ping_pong():
     data = {"response": "pong!"}
     return jsonify(data)
 
+
 @app.route('/chat', methods=['POST'])
 def chat():
+    """
+    Handle incoming POST requests to the '/chat' endpoint.
+
+    Expects a JSON payload containing 'message' (user input) and 'chat_history' (previous conversation).
+
+    Args:
+        None
+
+    Returns:
+        Flask Response: JSON object containing the bot's response and updated chat history.
+    """
     if request.method == 'POST':
         data = request.get_json()
         message = data.get('message', '')
