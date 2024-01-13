@@ -11,15 +11,15 @@ Es wurden zwei Use Cases umgesetzt:
 Die angepassten Funktionalitäten des Prototyps finden sich im Ordner hackathon_chat_test in folgenden Dateien:
 
 Zu 1.:
-- server
+server
 -   app.py
 -   api_handler.py
-- client>src
+client>src
 -   App.Vue
 
 Zu 2.:
-- server
+server
 -   app2.py
 -   api_handler2.py
-- client>src
+client>src
 -   App2.Vue
